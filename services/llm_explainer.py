@@ -142,6 +142,8 @@ def generate_explanation(result: dict[str, Any]) -> str:
         )
 
         response.raise_for_status()
+        print("MODEL:", MODEL_NAME)
+        print("STATUS: LLM CALL SUCCESS")
         return response.json()["choices"][0]["message"]["content"].strip()
 
     except Exception as exc:
