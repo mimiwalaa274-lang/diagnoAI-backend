@@ -1,0 +1,23 @@
+{
+    "hba1c": "HbA1c_Test",
+    "fasting_glucose": "Fasting_Glucose_Test",
+    "bmi": "BMI_Measurement",
+    "age": "Age_Factor",
+    "gender": "Gender_Factor",
+    "target_classes": [
+        "Healthy",
+        "Prediabetes",
+        "Diabetes"
+    ],
+    "findings": [
+        "Normal_HbA1c",
+        "Elevated_HbA1c_Prediabetes_Range",
+        "High_HbA1c_Diabetes_Range",
+        "Normal_Fasting_Glucose",
+        "Elevated_Fasting_Glucose_Prediabetes_Range",
+        "High_Fasting_Glucose_Diabetes_Range",
+        "Normal_BMI",
+        "Overweight",
+        "Obesity"
+    ]
+}

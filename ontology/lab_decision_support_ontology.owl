@@ -1,0 +1,2795 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/lab_decision_support.owl#"
+     xml:base="http://example.org/lab_decision_support.owl"
+     xmlns:cl="http://purl.obolibrary.org/obo/cl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:go="http://purl.obolibrary.org/obo/go#"
+     xmlns:hp="http://purl.obolibrary.org/obo/hp#"
+     xmlns:pr="http://purl.obolibrary.org/obo/pr#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
+     xmlns:doid="http://purl.obolibrary.org/obo/doid#"
+     xmlns:pato="http://purl.obolibrary.org/obo/pato#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:chebi1="http://purl.obolibrary.org/obo/chebi#2"
+     xmlns:chebi2="http://purl.obolibrary.org/obo/chebi#3"
+     xmlns:chebi3="http://purl.obolibrary.org/obo/chebi#1"
+     xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://example.org/lab_decision_support.owl">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/doid/releases/2026-04-30/doid.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2026-02-16/hp-full.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#diseaseHasAction -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#diseaseHasAction">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#diseaseHasUrgency -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#diseaseHasUrgency">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Urgency_Level"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#diseaseRequiresTest -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#diseaseRequiresTest">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding">
+        <owl:inverseOf rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#diseaseTreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#diseaseTreatedBy">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#findingSuggestsDisease -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#findingSuggestsDisease">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#hasLabTest -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#hasLabTest">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#hasPatientFactor -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#hasPatientFactor">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#labTestIndicatesFinding -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#labTestIndicatesFinding">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding">
+        <rdfs:domain rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+        <rdfs:range rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#ALP -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#ALP">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_ALP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#ALT -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#ALT">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_ALT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hepatic_Cell_Injury"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#AST -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#AST">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_AST"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Liver_Damage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Abnormal_Platelets -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Abnormal_Platelets">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Platelet_Disorder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Additional_Test -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Additional_Test">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Age -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Age">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Albumin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Albumin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hypoalbuminemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Liver_Synthetic_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Anemia_Other -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Anemia_Other">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Anti_TPO -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Anti_TPO">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#BMI -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#BMI">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Insulin_Resistance_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Obesity_Finding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#BUN -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#BUN">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_BUN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Kidney_Function_Impairment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Basophils -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Basophils">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Bilirubin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Bilirubin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperbilirubinemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Jaundice_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Blood_Glucose -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Blood_Glucose">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperglycemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Bone_Marrow_Biopsy -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Bone_Marrow_Biopsy">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#CBC_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#CBC_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Basophils"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Eosinophils"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematocrit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hemoglobin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Lymphocytes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#MCH"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#MCHC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#MCV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Monocytes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Neutrophils"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Platelets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#RBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#RDW"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#WBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#CRP -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#CRP">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_Creatinine"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_eGFR"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_784"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Refer_To_Specialist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Kidney_Ultrasound"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urine_Albumin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urine_Analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Nephrologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Creatinine -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Creatinine">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_Creatinine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Diabetes_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Diabetes_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Blood_Glucose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#HbA1c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Age"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#BMI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Heart_Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hypertension"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Disease_Candidate -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Elevated_ALT -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Elevated_ALT">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Elevated_AST -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Elevated_AST">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Elevated_BUN -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Elevated_BUN">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Kidney_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Emergency -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Emergency">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Urgency_Level"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Emergency_Physician -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Emergency_Physician">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Endocrinologist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Endocrinologist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Eosinophils -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Eosinophils">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Ferritin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Ferritin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Finding -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Finding">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Flow_Cytometry -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Flow_Cytometry">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Free_T3 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Free_T3">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Free_T4 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Free_T4">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Gender -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Gender">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#HbA1c -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#HbA1c">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_HbA1c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Healthy -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Healthy">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Healthy_Diabetes_Status -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Healthy_Diabetes_Status">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Heart_Disease -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Heart_Disease">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Insulin_Resistance_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hematocrit -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hematocrit">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hematologist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hematologist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hemoglobin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hemoglobin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_Hemoglobin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hepatic_Cell_Injury -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hepatic_Cell_Injury">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hepatologist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hepatologist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_ALP -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_ALP">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_Creatinine -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_Creatinine">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Kidney_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_HbA1c -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_HbA1c">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Prediabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Type_2_Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_MCV -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_MCV">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Macrocytic_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_RDW -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_RDW">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Anemia_Other"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Iron_Deficiency_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_T3_T4 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_T3_T4">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperthyroidism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_TSH -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_TSH">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hypothyroidism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#High_WBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#High_WBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Infection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hyperbilirubinemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hyperbilirubinemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002904"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hyperglycemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hyperglycemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003074"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Type_2_Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hypertension -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Patient_Factor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#patientFactorIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hypertension_Finding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hypertension_Finding -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hypertension_Finding">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Type_2_Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hyperthyroidism -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hyperthyroidism">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_T3_T4"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_TSH"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_7998"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Free_T3"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Free_T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Endocrinologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hyperuricemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hyperuricemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hypoalbuminemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hypoalbuminemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Hypothyroidism -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Hypothyroidism">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_TSH"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_T4"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_1459"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Anti_TPO"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Free_T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Endocrinologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Infection -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Infection">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_WBC"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Neutrophilia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#CRP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Internal_Medicine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Insulin_Resistance_Risk -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Insulin_Resistance_Risk">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Prediabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Type_2_Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Internal_Medicine -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Internal_Medicine">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Iron_Deficiency_Anemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Iron_Deficiency_Anemia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_RDW"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_Hemoglobin"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_MCV"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_11758"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Ferritin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Serum_Iron"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#TIBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Jaundice_Risk -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Jaundice_Risk">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000952"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Kidney_Function_Impairment -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Kidney_Function_Impairment">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Kidney_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Kidney_Function_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Kidney_Function_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#BUN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Creatinine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Uric_Acid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#eGFR"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Age"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasPatientFactor"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Gender"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Kidney_Ultrasound -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Kidney_Ultrasound">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Lab_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Lab_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Lab_Test -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Lab_Test">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Leukemia_Risk -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Leukemia_Risk">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Abnormal_Platelets"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Anemia"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Very_High_WBC"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_1240"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urgent_Medical_Attention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Emergency"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Bone_Marrow_Biopsy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Flow_Cytometry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Lifestyle_Modification -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Lifestyle_Modification">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Liver_Damage -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Liver_Damage">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Liver_Function_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Liver_Function_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#ALP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#ALT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#AST"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Albumin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Bilirubin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Liver_Synthetic_Dysfunction -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Liver_Synthetic_Dysfunction">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Liver_Ultrasound -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Liver_Ultrasound">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_Hemoglobin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_Hemoglobin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001903"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Anemia_Other"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Iron_Deficiency_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Macrocytic_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Microcytic_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Normocytic_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_MCV -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_MCV">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Iron_Deficiency_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Microcytic_Anemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_RBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_RBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_T4 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_T4">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hypothyroidism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_TSH -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_TSH">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperthyroidism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Low_eGFR -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Low_eGFR">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Chronic_Kidney_Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Lymphocytes -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Lymphocytes">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Lymphocytosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Lymphocytosis -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Lymphocytosis">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Infection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#MCH -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#MCH">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#MCHC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#MCHC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#MCV -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#MCV">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_MCV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_MCV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Macrocytic_Anemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Macrocytic_Anemia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_MCV"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_Hemoglobin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Medical_Entity -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Medical_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Medical_Follow_Up -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Medical_Follow_Up">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Microcytic_Anemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Microcytic_Anemia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_Hemoglobin"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_MCV"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Ferritin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Serum_Iron"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#TIBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Mild_Kidney_Dysfunction -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Mild_Kidney_Dysfunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_BUN"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_Creatinine"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Refer_To_Specialist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urine_Analysis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Nephrologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Mild_Liver_Dysfunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_ALT"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_AST"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hepatologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Monocytes -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Monocytes">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Nephrologist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Nephrologist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Specialist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Neutrophilia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Neutrophilia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Infection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Neutrophils -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Neutrophils">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Neutrophilia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Normal_Kidney_Function -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Normal_Kidney_Function">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Normal_Liver_Function -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Normal_Liver_Function">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Normal_Thyroid_Function -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Normal_Thyroid_Function">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Normocytic_Anemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Normocytic_Anemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Obesity_Finding -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Obesity_Finding">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Prediabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Type_2_Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Order_Confirmatory_Test -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Order_Confirmatory_Test">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Patient_Factor -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Patient_Factor">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Peripheral_Smear -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Peripheral_Smear">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Platelet_Disorder -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Platelet_Disorder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Abnormal_Platelets"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Refer_To_Specialist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Peripheral_Smear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hematologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Platelets -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Platelets">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Abnormal_Platelets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Thrombocytopenia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Thrombocytosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Prediabetes -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Prediabetes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_HbA1c"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Insulin_Resistance_Risk"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Lifestyle_Modification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Routine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Endocrinologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#RBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#RBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_RBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#RDW -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#RDW">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_RDW"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Recommendation -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Medical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Recommended_Action -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Recommended_Action">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Refer_To_Specialist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Refer_To_Specialist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Repeat_Lab_Test -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Repeat_Lab_Test">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Repeat_Test -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Repeat_Test">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Routine -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Routine">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Urgency_Level"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Serum_Iron -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Serum_Iron">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Severe_Anemia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Severe_Anemia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Anemia_Other"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Severe_Liver_Dysfunction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_ALT"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Elevated_AST"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperbilirubinemia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Refer_To_Specialist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Urgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Liver_Ultrasound"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hepatologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Soon -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Soon">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Urgency_Level"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Specialist -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Specialist">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#T3 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#T3">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_T3_T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#T4 -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#T4">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_T3_T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#TIBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#TIBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#TSH -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#TSH">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_TSH"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_TSH"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Thrombocytopenia -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Thrombocytopenia">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001873"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Platelet_Disorder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Thrombocytosis -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Thrombocytosis">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001894"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Platelet_Disorder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Thyroid_Function_Panel -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Thyroid_Function_Panel">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Panel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#T3"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#T4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#hasLabTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#TSH"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Type_2_Diabetes -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Type_2_Diabetes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_HbA1c"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseSuggestedByFinding"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperglycemia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Disease_Candidate"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/DOID_9352"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasAction"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Medical_Follow_Up"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseHasUrgency"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Soon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseRequiresTest"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Repeat_Lab_Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#diseaseTreatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Endocrinologist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Urgency_Level -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Urgency_Level">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Urgent -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Urgent">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Urgency_Level"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Urgent_Medical_Attention -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Urgent_Medical_Attention">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Recommended_Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Uric_Acid -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Uric_Acid">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Hyperuricemia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Urine_Albumin -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Urine_Albumin">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Urine_Analysis -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Urine_Analysis">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Additional_Test"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#Very_High_WBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#Very_High_WBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Finding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#findingSuggestsDisease"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Leukemia_Risk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#WBC -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#WBC">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#High_WBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Very_High_WBC"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/lab_decision_support.owl#eGFR -->
+
+    <owl:Class rdf:about="http://example.org/lab_decision_support.owl#eGFR">
+        <rdfs:subClassOf rdf:resource="http://example.org/lab_decision_support.owl#Lab_Test"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/lab_decision_support.owl#labTestIndicatesFinding"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/lab_decision_support.owl#Low_eGFR"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

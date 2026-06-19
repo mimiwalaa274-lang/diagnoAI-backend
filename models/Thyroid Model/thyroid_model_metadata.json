@@ -1,0 +1,23 @@
+{
+    "best_model_name": "Decision Tree",
+    "features": [
+        "TSH",
+        "T3_ng_dL",
+        "T4_ug_dL"
+    ],
+    "classes": [
+        "Hyperthyroidism",
+        "Hypothyroidism",
+        "Normal"
+    ],
+    "unit_notes": {
+        "TSH": "mIU/L",
+        "T3_ng_dL": "ng/dL",
+        "T4_ug_dL": "ug/dL"
+    },
+    "reference_ranges": {
+        "TSH": "0.4 - 4.0 mIU/L",
+        "T3": "80 - 180 ng/dL",
+        "T4": "5 - 12 ug/dL"
+    }
+}
